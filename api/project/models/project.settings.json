@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "project",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "employees": {
+      "via": "projects",
+      "collection": "employee"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "NEW",
+        "ACTIVE",
+        "FINISHED",
+        "CANCELLED"
+      ],
+      "default": "NEW",
+      "required": true
+    }
+  }
+}

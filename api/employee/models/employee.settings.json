@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "name": "employee",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "projects": {
+      "via": "employees",
+      "collection": "project",
+      "dominant": true
+    },
+    "city": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    }
+  }
+}
